@@ -5,6 +5,7 @@
     element = none 
 */
 
+/* main */
 .main-title {
     text-align: center;
 }
@@ -19,6 +20,7 @@
     flex: 1;
 }
 
+/* form, input, button */
 .input-title {
     font-size: 14px;
     font-weight: bold;
@@ -60,12 +62,14 @@ input[type=number]:focus {
     border:3px solid #555;
 }
 
+/* result */
 .result-section {
     padding: 6px; 
     border-radius: 12px; 
     background-color:aliceblue
 }
 
+/* download */
 #google-play-logo {
     width: 8rem;
     height: 9rem;

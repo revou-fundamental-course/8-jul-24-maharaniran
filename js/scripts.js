@@ -45,11 +45,16 @@ function calculateBMI() {
         saran = "Mulailah mengadopsi pola makan sehat yang rendah kalori dan tinggi serat serta tingkatkan aktivitas fisik.";
         changeColor('#ff9900');
 
-    } else {
+    } else if (bmi >=30) {
         kategori = "Obese (>30)"
         deskripsi = "Anda berada dalam kategori obesitas.";
         saran = "Fokus pada perubahan gaya hidup yang melibatkan pola makan sehat dan peningkatan aktivitas fisik. Konsultasikan lebih lanjut dengan ahli gizi atau profesional kesehatan";
         changeColor('#db0000');
+
+    } else {
+        kategori = "Invalid"
+        deskripsi = "";
+        saran = "";
     }
 
     document.getElementById('result').textContent = bmi.toFixed(2); 
@@ -61,4 +66,4 @@ function calculateBMI() {
 function changeColor(color) {
     const element = document.getElementById('result');
     element.style.color = color;
-  }
+}
