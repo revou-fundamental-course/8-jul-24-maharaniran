@@ -8,69 +8,135 @@
 </head>
 <body>
     <!-- Main Title -->
- <header class="main-title" style="text-align: center;">
+    <header class="main-title" style="text-align: center;">
     <h1>Kalkulator BMI</h1>
-</header>
+    </header>
+    <br>
 
-<main style="
-    display: flex; 
-    justify-content: space-around;">
-        <!-- Left Section -->
-        <section>
-            <!-- Main Article-->
-            <article>
-            <p>Body Mass Index (BMI) adalah ukuran yang digunakan untuk menilai apakah seseorang memiliki berat badan yang sehat berdasarkan tinggi badan mereka.</p>
+<main style="display: flex; justify-content: space-around; margin: 0 1rem 0 1rem">
+        <!-- Left Content -->
+        <section class="main-content" style="flex: 1; margin-right: 1.5rem">
+            <!-- Main Article -->
+            <article  style="margin: 0 0.75rem 0 0.75rem">
+                <header>
+                    <h1>Calculate</h1>   
+                </header>
+            
+            <p style="text-align: justify">Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang dengan kalkulator BMI.</p>
             </article>
 
             <!-- Form -->
-            <section>
-            <form style="border: 1px solid; padding:15px; background-color:aliceblue">
-            <input type="radio" id="selection-man"><label for="selection-man">Laki-laki</label>
-            <input type="radio" id="selection-woman"><label for="selection-woman">Perempuan</label>
-            <div>
-            <label for="input-tinggi-badan">Berat Badan (Kg)</label>
-            <input type="number" id="input-berat-badan">
-            </div>
-            <div>
-            <label for="input-tinggi-badan">Tinggi Badan (Cm)</label>
-            <input type="number" id="input-tinggi-badan">
-            </div>
-            <div>
-            <label for="input-busia">Usia (Th)</label>
-            <input type="number" id="input-usia">
-            </div>
-            <div>
-            <button>Submit BMI</button> 
-            <button>Reset</button> 
-            </div>
+            <section  style="padding: 12px; border-radius: 12px; background-color:aliceblue;">
+                <form>
+                    <div class="input-title" 
+                    style="font-size: 16px; font-weight: lighter; margin: 0.5rem 0 0.5rem 0">
+                    Jenis Kelamin
+                    </div>
+                    <input type="radio" id="selection-man" name="gender">
+                        <label for="selection-man">Laki-laki</label>
+                    
+                    <input type="radio" id="selection-woman" name="gender">
+                        <label for="selection-woman">Perempuan</label>
+                </form>
+
+                <form> 
+                    <div style="display:flex; flex-direction:column;">
+                        <label for="input-berat-badan" style="margin: 1rem 0 0 0">Berat Badan (Kg)</label>
+                        <input type="number" id="input-berat-badan">
+                    </div>
+
+                    <div style="display:flex; flex-direction:column;">
+                        <label for="input-tinggi-badan" style="margin: 1rem 0 0rem 0">Tinggi Badan (Cm)</label>
+                        <input type="number" id="input-tinggi-badan">
+                    </div>
+
+                    <div style="display:flex; flex-direction:column;">
+                        <label for="input-usia" style="margin: 1rem 0 0 0">Usia (Th)</label>
+                        <input type="number" id="input-usia">
+                    </div>
+
+                    <div>
+                        <button class="button-submit" id="submit"
+                        style="
+                        margin: 1.25rem 1rem 0.5rem 0;
+                        background-color:mediumspringgreen; 
+                        border: 2px solid;
+                        height: 30px;
+                        border-radius: 6px;" 
+                        onclick='calculateBMI()'>Submit BMI</button> 
+
+                        <button class="button-reset" id="reset"
+                        style="margin: 1.25rem 1rem 0.5rem 0;
+                        background-color:darksalmon; 
+                        border: 2px solid;
+                        height: 30px;
+                        border-radius: 6px;" 
+                        onclick='reset()'>Reset</button> 
+                    </div>
+                </form>
             </section>
 
             <!-- Form Article -->
-            <section>
-            <header>
-            <h2>Keunggulan Fitur</h2>
-            <article>
-            Lorem ipsum dolor sit amet...
-            </article>
+            <section style="margin: 0 0.75rem 0 0.75rem">
+                <header>
+                    <h1>Keunggulan Fitur</h1>
+                </header>
+                <article>
+                <ol style="padding-left: 20px">
+                    <li>Menghitung berat badan</li>
+                    <li>Menentukan kategori berat badan ideal atau tidak</li>
+                    <li>Mempersiapkan program penurunan berat badan</li>
+                </ol>
+                <p style="text-align: justify;">Kalkulator ini hanya boleh digunakan oleh orang dewasa (wanita hamil atau menyusui tidak boleh mengandalkan pembacaan BMI ini) dan tidak ada tindakan yang harus diambil berdasarkan nilainya selain berkonsultasi dengan orang yang memebuhi syarat seperti dokter.</p>
+                <p style="text-align: justify;">Kalkulator ini memberi Anda gambaran tentang perbandingan berat badan Anda dengan nilai umum. Indeks Massa Tubuh (atau BMI) dihitung sebagai berat badan Anda (dalam kilogram) dibagi dengan kuadrat tinggi badan Anda (dalam meter) atau BMI = Kg/M².</p>
+                </article>
             </section>
         </section>
 
-        <!-- Right Section -->
-        <section>
-            <!-- Result Article-->
-            <article>
+        <!-- Right Content -->
+        <section class="main-content" style="flex: 1">
+            <!-- Result Article -->
+            <article  style="margin: 0 0.75rem 0 0.75rem">
             <header>
-            <h1>Result</h1>   
+                <h1>Result</h1>   
             </header>
-        
+            </article>
+
             <!-- Result Section -->
-            <section></section>
+            <section class="result-section" 
+            style="padding: 6px; border-radius: 12px; background-color:aliceblue">
+                <art style="margin: 0 0.75rem 0 0.75rem; text-align: center;">
+                <p>Hasil perhitungan BMI adalah...</p>
+
+                <h2 id="result">0</h2>
+
+                <p id="kategori"></p>
+                <p id="deskripsi"></p>
+                <p id="saran"></p>
+                </article>
+            </section>
 
             <!-- General Information -->
-            <section></section>
+            <section>
+                <p style="text-align: justify;">BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyakit seseorang. Anda perlu konsultasi lebih lanjut mengenai resiko dan kekhawatiran Anda terkait dengan berat badan Anda.</p>
+            </section>
             </article>
+            <br>
+            <br>
+
+            <!-- Download Aplikasi -->
+             <section style="text-align: center; display: flex; flex-direction: column; justify-content: center; padding-bottom: 0;">
+                <h1 style="margin-bottom:0">Download Aplikasi</h1>
+                <div style="display: flex; flex-direction: row; justify-content: center; padding-top: 0;">
+                    <image src="images/google-play-badge-logo.svg" alt="google-play-badge" id="google-play-logo">
+                    <image src="images/app-store-apple-logo.svg" alt="google-play-badge-logo" id="apple-store-logo">
+                </div>
+
+            </section>
+
         </section>
-    </section>
+
 </main>
+<script src="js/scripts.js"></script>
 </body>
 </html>
