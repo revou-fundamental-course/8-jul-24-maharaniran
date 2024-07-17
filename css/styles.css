@@ -1,10 +1,78 @@
-/* Ini css */
+/* ini css */
+/* prefixes
+    class = "."
+    id = "#"
+    element = none 
+*/
 
 .main-title {
     text-align: center;
 }
 
-main {
-    display: flex; 
+.main {
+    display: flex;
     justify-content: space-around;
+}
+
+.main-content {
+    border: 1px;
+    flex: 1;
+}
+
+.input-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form {
+    padding: 12px; 
+    border-radius: 12px;
+    background-color:aliceblue
+}
+
+.button {
+    height: 30px;
+    border-radius: 6px;
+}
+
+.submit {
+    background-color:springgreen;
+    border: 2px;
+}
+
+.reset {
+    background-color:darksalmon;
+    border: 2px;
+}
+
+input[type=number] {
+    width: 100%;
+    padding: 5px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border:3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none
+}
+
+input[type=number]:focus {
+    border:3px solid #555;
+}
+
+.result-section {
+    padding: 6px; 
+    border-radius: 12px; 
+    background-color:aliceblue
+}
+
+#google-play-logo {
+    width: 8rem;
+    height: 9rem;
+    padding-right: 20px;
+}
+
+#apple-store-logo {
+    width: 8rem;
+    height: 9rem;
 }
