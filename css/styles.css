@@ -58,6 +58,7 @@ input[type=number] {
     outline: none
 }
 
+/* focus ketika klik box input */
 input[type=number]:focus {
     border:3px solid #555;
 }
@@ -69,7 +70,7 @@ input[type=number]:focus {
     background-color:aliceblue
 }
 
-/* download */
+/* img app download */
 #google-play-logo {
     width: 8rem;
     height: 9rem;
@@ -79,4 +80,20 @@ input[type=number]:focus {
 #apple-store-logo {
     width: 8rem;
     height: 9rem;
+}
+
+/* flex untuk layar mobile */
+@media (max-width: 600px) {
+    .main-content {
+    flex-direction: column;
+    }
+    .left-section {
+        width: 100%;
+        padding: 0;
+        margin: 0 0 0 0;
+    }
+    .right-section {
+        width: 100%;
+        padding: 0;
+    }
 }
